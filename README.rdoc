@@ -4,14 +4,14 @@ command wheneverize will create config/schedule.rb for future purpose
 
 config/schedule.rb
 example:
-set :output, "#{path}/tmp/cache/whenever.log"
+  set :output, "#{path}/tmp/cache/whenever.log"
 
-set :environment, "development"
-every 2.minutes do
-  runner "Whentest.create(:name => \"Whenever\")"
-end
+  set :environment, "development"
+  every 2.minutes do
+    runner "Whentest.create(:name => \"Whenever\")"
+  end
 
-# crontab -l                  - list all cron jobs
-# crontab -e                  - edit cron by yourself
-# whenever --update-crontab   - update crontab 
+ crontab -l                  - list all cron jobs
+ crontab -e                  - edit cron by yourself
+ whenever --update-crontab   - update crontab 
  
