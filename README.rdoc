@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+command wheneverize will create config/schedule.rb for future purpose 
 
-Things you may want to cover:
+config/schedule.rb
+example:
+set :output, "#{path}/tmp/cache/whenever.log"
 
-* Ruby version
+set :environment, "development"
+every 2.minutes do
+  runner "Whentest.create(:name => \"Whenever\")"
+end
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# crontab -l                  - list all cron jobs
+# crontab -e                  - edit cron by yourself
+# whenever --update-crontab   - update crontab 
+ 
